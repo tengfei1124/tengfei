@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+</head>
+<script>
+//十行十列表格
+	// function aa(a,b){
+	// 	var a=a||10;
+	// 	var b=b||10;
+	// 	var str="<table>";
+	// 	for(var i=0;i<a;i++){
+	// 		str+="<tr>";
+	// 		for(var j=0;j<b;j++){
+	// 			str+="<td>"+j+"</td>";
+	// 		}
+	// 		str+="</tr>";
+	// 	}
+	// 	document.write(str)
+	// }
+	// aa(5,5)
+
+//星星三角
+	// function xingxing(n){
+	// 	for(var i=1;i<=n;i++){
+	// 		for(var k=n;k>=i;k--){
+	// 			document.write("&nbsp;");
+	// 		}
+	// 		for(var j=1;j<=i;j++){
+	// 			document.write("*"+"&nbsp;");
+	// 		}
+	// 		document.write("<br/>");
+	// 	}
+	// }
+	// xingxing(5)
+
+	// var arr=[6,5,8,9,7,2,3];
+	// function copy(arr){
+	// 	var newarr=[];
+	// 	for(var i=0;i<arr.length;i++){
+	// 		newarr[i]=arr[i]
+	// 	}
+	// 	return newarr;
+	// }
+//冒泡排序
+	// function mao(arr){
+	// 	var newarr=copy(arr);
+	// 	var len=newarr.length;
+	// 	for(var i=0;i<len;i++){
+	// 		for(var j=i+1;j<len;j++){
+	// 			if(newarr[i]>newarr[j]){
+	// 				var temp=newarr[i];
+	// 				newarr[i]=newarr[j];
+	// 				newarr[j]=temp;
+	// 			}
+	// 		}
+	// 	}
+	// 	return newarr;
+	// }
+	// console.log(mao(arr))
+//快速排序
+	// function sort(arr,callback){
+	// 	var newarr=copy(arr);
+	// 	var len=newarr.length;
+	// 	for(var i=0;i<len;i++){
+	// 		for(var j=i+1;j<len;j++){
+	// 			if(callback(newarr[i],newarr[j])){
+	// 				var temp=newarr[i];
+	// 				newarr[i]=newarr[j];
+	// 				newarr[j]=temp;
+	// 			}
+	// 		}
+	// 	}
+	// 	return newarr;
+	// }
+	// console.log(sort(arr,function(a,b){
+	// 	return a<b;
+	// }))
+
+//选择排序
+	// function select(arr){
+	// 	var newarr=copy(arr);
+	// 	var temp,mindex,len=newarr.length;
+	// 	for(var i=0;i<len;i++){
+	// 		mindex=i;
+	// 		for(var j=i+1;j<len;j++){
+	// 			if(newarr[mindex]>newarr[j]){
+	// 				mindex=j;
+	// 			}
+	// 		}
+	// 		temp=newarr[i];
+	// 		newarr[i]=newarr[mindex];
+	// 		newarr[mindex]=temp;
+	// 	}
+	// 	return newarr;
+	// }
+	// console.log(select(arr))
+
+//插入排序
+	function insert(arr){
+		var newarr=copy(arr);
+		var len=newarr.length;
+		for(var i=0;i<len;i++){
+			var pre=i-1;
+			var curr=newarr[i];
+			while(pre>=0&&newarr[pre]>curr){
+				newarr[pre+1]=newarr[pre];
+				pre--;
+			}
+			newarr[pre+1]=curr;
+		}
+		return newarr;
+	}
+	console.log(insert(arr))
+	// document.addEventListener("DOMContentLoaded",function(){
+	// 	var div=document.querySelectorAll("div");
+	// 	div=Array.prototype.slice.call(div);
+	// 	div.sort(function(a,b){
+	// 		return a.clientWidth>b.clientWidth;
+	// 	})
+	// 	div.forEach(function(obj,index){
+	// 		var width=obj.clientWidth;
+	// 		var clone=obj.cloneNode(true);
+	// 		clone.style.width=width+"px";
+	// 		document.body.appendChild(clone)
+	// 	})
+	// 	div.forEach(function(obj,index){
+	// 		document.body.removeChild(obj)
+	// 	})
+		
+	// })
+
+</script>
+<style>
+	div{
+		background: red;
+		margin:10px 0;
+		height:50px;
+		line-height: 50px;
+		text-align: center;
+	}
+	div:nth-child(1){
+		width:200px;
+	}
+	div:nth-child(2){
+		width:150px;
+	}
+	div:nth-child(3){
+		width:100px;
+	}
+	div:nth-child(4){
+		width:50px;
+	}
+	div:nth-child(5){
+		width:300px;
+	}
+</style>
+<body>
+	<div>1</div>
+	<div>2</div>
+	<div>3</div>
+	<div>4</div>
+	<div>5</div>
+</body>
+</html>
